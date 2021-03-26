@@ -8,7 +8,7 @@ class LoginView extends GetView<LoginController> {
   final nikController = TextEditingController();
   final pinController = TextEditingController();
 
-  final LoginController loginController = LoginController();
+  final LoginController loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +97,10 @@ class LoginView extends GetView<LoginController> {
                               children: [
                                 TextField(
                                   controller: nikController,
+                                  onChanged: (text) {
+                                    // When user enter text in textfield checktext method will get called
+                                    loginController.checktext(text);
+                                  },
                                   decoration: InputDecoration(
                                     prefixIcon: Icon(
                                       Icons.account_circle,
@@ -219,6 +223,7 @@ class LoginView extends GetView<LoginController> {
 
                       if (nik != null && pin != null) {
                         print(nik + pin);
+                        loginController.login();
                       } else {
                         Get.snackbar(
                             "Error", "Masukkan NIK & PIN dengan benar");
