@@ -8,6 +8,7 @@ class MandiriControlller extends GetxController {
 
   @override
   void onReady() {
+    // final PendudukController pendudukController = PendudukController();
     super.onReady();
   }
 

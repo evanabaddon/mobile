@@ -1,1 +1,1 @@
-
+export 'penduduk.dart';

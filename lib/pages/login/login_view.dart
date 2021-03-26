@@ -223,7 +223,7 @@ class LoginView extends GetView<LoginController> {
 
                       if (nik != null && pin != null) {
                         print(nik + pin);
-                        loginController.login();
+                        loginController.login(nik, pin);
                       } else {
                         Get.snackbar(
                             "Error", "Masukkan NIK & PIN dengan benar");

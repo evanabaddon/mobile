@@ -4,6 +4,10 @@ import 'package:get/get.dart';
 import '../../core.dart';
 
 class MandiriView extends GetView<MandiriControlller> {
+  final Penduduk penduduk;
+
+  MandiriView({this.penduduk});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
